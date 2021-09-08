@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          
+        </div>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <a class="navbar-brand">Dashboard</a>
+        </a>
+      </ul>
+      <a style="color:blue">Logged in as <strong ><%= current_user.email %></strong></a>
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+      <button class="btn btn-danger navbar-btn"><%= link_to "Create task", new_task_path %></button>
+      <button class="btn btn-danger navbar-btn"><%= link_to "Signout", destroy_user_session_path, method: :delete %>
+      </button>
+      <% end %>
+    </div>
+  </nav>
+  <div class="container">
+    <% if notice %>
+    <p class="alert alert-success">
+      <%= notice %>
+    </p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger">
+      <%= alert %>   
+    </p>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
+</html>

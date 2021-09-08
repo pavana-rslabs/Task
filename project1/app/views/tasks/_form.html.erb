@@ -1,0 +1,30 @@
+<h4> New task </h4>
+<%= form_for :task, url: tasks_path do |f| %>
+<p>
+  <label>
+    Name:
+  </label>
+  <br>
+  <%= f.text_field :title, :required => true %>
+</p>
+<p>
+  <label>
+    Description:
+  </label>
+  <br>
+  <%= f.text_area :description %>
+</p>
+<p>
+  <label>
+    Due date:
+  </label>
+  <br>
+  <%= f.date_field :due_date %>
+</p>
+<p>
+  <%= f.button :Submit %>
+  <%= link_to "Cancel", root_path %>
+    
+</p>
+<% end %>
+

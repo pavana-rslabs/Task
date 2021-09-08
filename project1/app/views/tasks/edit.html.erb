@@ -1,0 +1,28 @@
+<h4> Edit task details </h4>
+<%= form_for @task do |task| %>
+<p>
+  <label>
+  Name:
+  </label>
+  <br>
+  <%= task.text_field :title, :required => true %>
+</p>
+<p>
+  <label>
+  Description:
+  </label>
+  <br>
+  <%= task.text_area :description %>
+</p>
+<p>
+  <label>
+  Due date:
+  </label>
+  <br>
+  <%= task.date_field :due_date, value: @task.due_date %>
+</p>
+<p>
+  <%= task.button :update %>
+  <%= link_to "Cancel", root_path %>
+</p>
+<% end %>

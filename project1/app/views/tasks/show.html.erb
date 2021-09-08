@@ -1,0 +1,9 @@
+<div>
+	<%= link_to "Edit", edit_task_path %>
+</div>
+<div>
+	<p>Title: <%= @task.title.titleize %> </p>
+	<p>Description: <%= @task.description.html_safe %> </p>
+	<p>Due date: <%= @task.due_date %> </p>
+</div>
+<%= render 'edit' %>
