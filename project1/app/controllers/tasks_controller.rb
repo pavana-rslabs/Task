@@ -10,8 +10,7 @@ class TasksController < ApplicationController
 	end
 
 	def create
-		@task = Task.new(task_params)
-		@task.user_id = current_user.id
+		@task = current_user.tasks.build(task_params)
 		if @task.save
 			redirect_to root_path
 		else
@@ -39,10 +38,7 @@ class TasksController < ApplicationController
 		@task.destroy
 		redirect_to tasks_path
 	end	
-
-	private 
-
-	def set_task
+	private def set_task
 		@task = Task.find(params[:id])
 	end
 		

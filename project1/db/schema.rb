@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_103530) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    add_index :tasks, :user_id
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
