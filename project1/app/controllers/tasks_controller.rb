@@ -10,15 +10,13 @@ class TasksController < ApplicationController
 	end
 
 	def create
-<<<<<<< Updated upstream
+
 		@task = Task.new(task_params)
-		@task.user_id = current_user.id
-=======
-		
+
 		@task = current_user.tasks.build(task_params)
->>>>>>> Stashed changes
+
 		if @task.save
-			redirect_to root_path
+			redirect_to root_path, status: 201
 		else
 			render 'new'
 		end

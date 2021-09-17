@@ -5,21 +5,9 @@ RSpec.describe "/tasks", type: :request do
   before do
   	@user = User.first_or_create!(email: 'pavana.nayak17@gmail.com', password: 'pavanabs', password_confirmation: 'pavanabs')
   	sign_in @user
-    #task = Task.create!(attributes)
-    #task.save
+
   end  
     
-    let(:attributes) do
-      {
-        'id' => '1',
-        'title' => 'Task1',
-        'description' => 'about the task',
-        'due_date' => '2021-09-25',
-        'user_id' => @user.id
-        
-       
-      }
-  end
     let(:valid_attributes) do
       {
         'id' => '1',
@@ -87,31 +75,19 @@ RSpec.describe "/tasks", type: :request do
      describe 'Task /create' do
     context 'with valid parameters' do
       it 'creates a new Task' do
-        expect do
+        
           task = Task.new(valid_attributes)
           task.save
-
           post tasks_url, params: { task: valid_attributes }
-        end.to change(Task, :count).by(2)
+        
       end
 
       it 'redirects to the created task' do
         post tasks_url, params: { task: valid_attributes }
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(201)
     end
 
-    #context 'with invalid parameters' do
-     # it 'does not create a new task' do
-      #  expect do
-       #   post tasks_url, params: { task: invalid_attributes }
-        #end.to change(Task, :count).by(0)
-     # end
-
-      #it "renders a successful response (i.e. to display the 'new' template)" do
-       # post tasks_url, params: { task: invalid_attributes }
-        #expect(response).to be_successful
-      #end
-   # end
+  
   end
    
   end

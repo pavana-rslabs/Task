@@ -152,8 +152,6 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-<<<<<<< Updated upstream
-=======
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -176,7 +174,6 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
     ruby-progressbar (1.11.0)
->>>>>>> Stashed changes
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -246,12 +243,9 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
-<<<<<<< Updated upstream
-=======
   rails_best_practices
   rspec
   rspec-rails
->>>>>>> Stashed changes
   sass-rails (>= 6)
   selenium-webdriver
   strftime (~> 1.0.0)
