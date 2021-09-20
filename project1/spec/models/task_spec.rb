@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  current_user = User.find_or_create!(email: 'pavanabs9@gmail.com', password: 'pavanabs', password_confirmation: 'pavanabs')
+  current_user = User.first_or_create!(email: 'pavanabs9@gmail.com', password: 'pavanabs', password_confirmation: 'pavanabs')
 
   it 'title must be present' do
     task = Task.new(
